@@ -20,3 +20,8 @@ jobs:
 
     - name: Build
       run: go build -v ./...
+    - name: Upload assets to GitHub
+      uses: AButler/upload-release-assets@v2.0
+      with:
+        files: './*'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
